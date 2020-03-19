@@ -11,8 +11,9 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 
-app.get('*',  function (req, res) {
- 
+app.get('/',  function (req, res) {
+  res.status(200).send({
+    message: 'Express backend server'});
 });
 
 io.on('connection',(socket)=>{
