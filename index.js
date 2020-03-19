@@ -48,4 +48,3 @@ io.on('connection',(socket)=>{
 app.set('port',(process.env.PORT));
 
 server.listen(app.get('port'));
-console.log('listening on port',app.get('port'));
