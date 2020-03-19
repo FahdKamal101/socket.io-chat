@@ -10,6 +10,12 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+
+app.get('/',  function (req, res) {
+  res.status(200).send({
+    message: 'Express backend server'});
+});
+
 io.on('connection',(socket)=>{
 
     console.log('new connection made.');
@@ -38,7 +44,7 @@ io.on('connection',(socket)=>{
       io.in(data.room).emit('new message', {user:data.user, message:data.message});
     })
 });
-
+//changed AT 12:10AM 3/20/2020
 app.set('port',(process.env.PORT));
 
 server.listen(app.get('port'));
