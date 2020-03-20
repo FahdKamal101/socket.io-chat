@@ -13,7 +13,7 @@ const io = socketio(server);
 
 app.get('/',  function (req, res) {
   res.status(200).send({
-    message: 'Express backend server'});
+    message: 'Express Backend Server'});
 });
 
 io.on('connection',(socket)=>{
