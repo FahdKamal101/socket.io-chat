@@ -32,7 +32,7 @@ io.on('connection',(socket)=>{
     
       console.log(data.user + ' left the room : ' + data.room);
 
-      socket.broadcast.to(data.room).emit('left room', {user:data.user, message:'has left this room.'});
+      socket.broadcast.to(data.room).emit('left room', {user:data.user, message:'has left this group.'});
 
       socket.leave(data.room);
     });
