@@ -25,8 +25,8 @@ io.on('connection',(socket)=>{
       socket.join(data.room);
 
       console.log(data.user + ' has joined the group : ' + data.room);
-
-      socket.broadcast.to(data.room).emit('new user joined', {user:data.user, message:' has joined this group'});
+      io.in(data.room).emit('new user joined', {user:data.user, message:' has joined this group'});
+     // socket.broadcast.to(data.room).emit('new user joined', {user:data.user, message:' has joined this group'});
     });
 
 
