@@ -19,7 +19,7 @@ app.get('/',  function (req, res) {
 io.on('connection',(socket)=>{
 
     console.log('new connection made.');
-
+ io.in(socket.data.room).emit('new user joined', {user:socket.data.user, message:' has joined this group'});
     socket.on('join', function(data){
       
       socket.join(data.room);
